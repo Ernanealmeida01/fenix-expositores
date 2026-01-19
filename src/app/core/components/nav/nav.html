@@ -1,14 +1,13 @@
 <nav class="nav">
   <button class="mobile-toggle" (click)="toggleMenu()">☰</button>
 
- <ul class="desktop-menu">
+<ul class="desktop-menu">
   @for (item of items; track item.path) {
     @if (!(item.path === '/' && isHome())) {
       <li>
         <a 
-          [routerLink]="item.path" 
-          routerLinkActive="active" 
-          [routerLinkActiveOptions]="{ exact: true }">
+          [routerLink]="item.path"
+          [ngClass]="{ 'active': isActive(item.path) }">
           {{ item.label }}
         </a>
       </li>

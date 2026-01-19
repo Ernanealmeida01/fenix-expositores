@@ -47,4 +47,8 @@ export class Nav {
     this.isMenuOpen.set(false);
     document.body.classList.remove('no-scroll');
   }
+  
+isActive(path: string): boolean { return this.currentUrl() === path; }
+
+
 }
