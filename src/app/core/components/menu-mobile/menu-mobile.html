@@ -1,0 +1,37 @@
+<div 
+  class="mobile-menu" 
+  [class.open]="isOpen"
+  (click)="close()"
+>
+
+  <div class="overlay"></div>
+
+  <!-- IMPORTANTE: bloqueia o clique aqui -->
+  <div 
+    class="menu-panel"
+    (click)="$event.stopPropagation()"
+  >
+
+    <div class="close-bar">
+      <button class="close-btn" (click)="close()">×</button>
+    </div>
+
+    <div class="divider"></div>
+
+  <ul class="menu-links">
+  @for (item of items; track item.path) {
+    <li>
+      <a 
+        [routerLink]="item.path" 
+        (click)="close()" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }">
+        <span class="dot"></span>
+        {{ item.label }}
+      </a>
+    </li>
+  }
+</ul>
+
+  </div>
+</div>

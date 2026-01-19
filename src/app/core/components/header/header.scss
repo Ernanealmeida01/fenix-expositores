@@ -1,0 +1,34 @@
+.header {
+  background: #ffffffb3;
+  height: 6rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 5px solid var(--border-gold);
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px #0000000d;
+
+  &__container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 6rem; // controla o tamanho do logo
+      width: auto;
+    }
+  }
+}
